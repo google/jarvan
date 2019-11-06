@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-signin-client_id" content="">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<link rel="icon" href="/static/img/favicon.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" type="text/css">
+
+<script src="/static/js/jumper_select.js"></script>
+
+</head>
+<body style='margin:0'>
+
+<div id="header" style='display:none'>
+  <div id='header-title'>
+    <img src="/static/img/menu-64.png" height=20 onclick='toggle_main_menu()'>
+    <a class='page_title' id='page_title_projects' href='javascript:w.go("menu1")'>Menu 1</a>
+    <a class='page_title' id='page_title_projects' href='javascript:w.go("menu2")'>Menu 2</a>
+  </div>
+
+
+  <div id='header-right'>
+    <div id="signout">
+      <a href="#" onclick="w.sign_out();">Logout</a>
+    </div>
+    <div id="user_name"></div>
+  </div>
+
+</div>
+
+  <ul id="main_menu" style='margin-left:-310px;display:none'>
+    <li id='list-title'><div class="l">Application Menu</div><div class="menu_button r"><a href='javascript:toggle_main_menu()'>Close</a></div></li>
+    <a href='/data'><li>Some Menu option</li></a>
+  </ul>
+
+<div id="please_sign_in" style='display:none'>
+  <div>Please Sign in to continue</div>
+  <div id="g-signin2" class="g-signin2" data-prompt="select_account" data-onsuccess="check_login"></div>
+</div>
+<div id="app_title"></div>
+<div id="page">
+  <div id="page-title"></div>
+  <div id='main_container'></div>
+</div>
+<div id="toast"></div>
+<div id='project_popup_container' onclick='$("#project_popup_container").hide();$("#project_popup").hide()'></div>
+<div id='project_popup' style='display:none'>
+  <div id='project_popup_content'></div>
+  <div id='project_popup_footer'></div>  
+</div>
+
+<script>
+  var w={};
+
+  w.css = document.createElement("link");
+  w.css.href = "/static/css/styles.css?"+Math.random();
+  w.css.rel="stylesheet";
+  w.css.type="text/css";
+  document.head.appendChild(w.css);
+
+  w.script = document.createElement("script");
+  w.script.src="/static/js/script.js?"+Math.random();
+  document.head.appendChild(w.script);
+
+var is_main_menu=false;
+
+function toggle_main_menu() {
+    var x = is_main_menu ? -310 : 0;
+    console.log(x);
+    $("#main_menu").show().css("margin-left",x+"px");
+    is_main_menu = !is_main_menu;
+}
+
+</script>

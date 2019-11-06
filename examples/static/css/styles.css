@@ -1,0 +1,223 @@
+body, div, li, input, select, button { font-family: Poppins; margin:0; font-size:12px; color:black;}
+body { background-color:#f5f5f5 ; }
+textarea { width:100%; height:100px }
+select, textarea, input { border:1px solid #ddd; border-radius:4px; font-family: Poppins; font-size:12px; }
+select:focus, textarea:focus, input:focus { border:2px solid #4285F4;border-radius:4px;outline: none;}
+input { height:24px; border:2px solid #eee; width:100%;}
+
+#header { position:fixed; top:0; left:0; height:50px; width:100%; background-color:#4285F4;box-shadow: 2px 2px 4px grey; }
+#header-title { cursor:pointer; height:46px; width:300px; }
+#header-title img { float:left; margin:14px 20px 0 20px; cursor:pointer; }
+#header-title a {  float:left; height:50px; line-height:50px; color:white; font-weight:300; text-decoration:none; font-size:14px; padding:0 20px }
+#header-title a:hover {font-weight:900; color:#ff8f00;} 
+#header-title a.selected{ background-color:#1565c0; } 
+
+#header-right { height:46px; position:absolute; left:320px; z-index:1; top:0; width:calc(100% - 332px);}
+
+#user_name, #header-right-menu { float:right; color:white; margin:17px 10px; font-size:13px;}
+#signout  { display:none; float:right; margin:17px 10px; }
+#signout a { color:white; text-decoration:none; font-size:13px; }
+
+#g-signin2 { display:none; position:fixed; margin:20px 140px;}
+#please_sign_in { display:none; margin:150px auto; width:400px; height:200px; box-shadow: 2px 2px 8px grey; background-color:#fafafa; border:1px solid #ddd; border-radius:4px; padding:80px 0 0 0;} 
+#please_sign_in div { text-align:center; }
+
+#col1 { width:300px;float:left;margin:34px 0 0 0; height:calc(100% - 80px)}
+#col2 { width:calc(100% - 400px);float:left; padding-top:20px;margin:34px 0 0 0 ; height:calc(100% - 80px) }
+
+
+
+#loading { width: 266px; height: 200px; position:fixed; right:-10px; top:60px; bottom:0; display:none }
+
+#page { border:0; width:100%; position:absolute;height:calc(100% - 50px); overflow:hidden; margin:50px 0 0 0;}
+#page iframe { width:100%; height:100%; border:0; margin:8px 0 0 0; }
+
+#main_column { display:none; width:200px; font-weight:12px; position:fixed; top:55px; left:0; background-color:#f5f5f5;xdisplay:table; height:calc(100% - 55px); 
+  background-color:#f5f5f5; }
+#main_column div { border-bottom:1px solid #eee;clear:both; background-color:#f5f5f5; width:calc(100% - 30px); height:40px; line-height:40px; font-size:13px; color:#666;padding:0 10px 0 20px; }
+#main_column div.selected { font-weight:600; color:#333; background-color:#ddd; }
+#main_column div:hover { cursor:pointer; color:#0D47A1;background-color:#ccc;}
+#main_column div.bottom { position:fixed; bottom:0; border-top:1px solid #ddd; width:170px; height:46px;}
+
+#main_container {  position:fixed; top:56px; left:20px; width:calc(100% - 40px); float:left;height:calc(100% - 45px); }
+
+#right_column { position:fixed;top:105px; height:calc(100% - 128px); right:0; background-color:#f5f5f5; transition: width 0.1s ease-in; width:0; overflow:hidden; }
+#right_column_head { width:100%; height:32px; overflow:hidden; }
+
+#right_column_title { font-weight:bold; }
+
+.right_column_head .tab { float:left; padding:7px 20px; font-size:13px; cursor:pointer; transition:all 0.25s}
+.right_column_head .tab:hover { background-color:#e3f2fd; }
+.right_column_head .tab.selected { background-color:#4285F4; color:white; }
+
+.button_big { font-size:32px; padding:0 10px; }
+.button_big:hover { background-color:#e3f2fd; border-radius:4px; cursor:pointer; }
+
+#content td { border:1px solid #ccc; }
+#content td.cell:hover { background-color:#eee; cursor:pointer; }
+#edit_cell { position:absolute; width:200px; height:100px; background-color:#eee; border-radius:4px; z-index:2; padding:4px; width:190px; display:none; height:35px;}
+
+#content { border-collapse: collapse; }
+.raw_data { margin:0px 20px 0px 10px; }
+
+#main_content { position:relative; width:100%; height:calc(100% - 73px);clear:both; overflow:auto; background-color:white;
+box-shadow: 3px 3px 8px #aaa;
+ } 
+
+
+table.list { border:1px solid #ddd; border-collapse:collapse;}
+table.list tr { border-bottom:1px solid #ddd }
+table.list tr.selected { border:2px solid #ff8f00; }
+table.list td { font-size:13px; font-family:Poppins; height:36px; padding:0 10px 0 10px; color:#000;}
+table.list tr:hover { background-color:#e3f2fd; }
+table.list thead td { font-weight:bold; height:30px;}
+
+.snippets_table { border:0; }
+.snippets_table tbody { padding-top:20px; }
+.snippets_table tr { border-bottom:0; }
+.snippets_table tr:hover { background-color:white; }
+.snippets_table td { padding:5px; }
+
+.charter_block { width:calc(100% - 40px); margin:20px; clear:both; }
+.charter_block .title { width:100%; font-weight:bold; margin-top:20px; }
+
+#edit_table { clear:both; overflow:auto;}
+.edit_project tr td:first-child { width:140px;  }
+
+
+button { border-radius:4px; transition: all 0.2s; cursor:pointer; margin:5px; font-size:13px; color:white; height:34px; line-height:34px; text-align:center; padding: 0 20px 0 20px; background-color:#4285F4; border:0 }
+button:hover { background-color: #42cdf4; border-color:#42cdf4 }
+button.green { background-color:#43a047; }
+button.green:hover { background-color:#81c784 }
+button.grey { background-color:#ccc; }
+button.grey:hover { background-color:#ddd }
+
+.edit_button { background-color:#ccc;}
+
+.project_tr { cursor:pointer }
+.add_icon { position:fixed; z-index:1; left:35px; bottom:20px;  }
+.add_icon i { color:#43a047; cursor:pointer; font-size:48px;}
+.add-icon:hover i { color:#81c784 }
+
+#project_snippets { width:calc(100% - 40px); font-size:13px; margin:50px 20px 20px 20px}
+#project_snippets .snippet_date { font-weight:bold; margin-top:10px; border-top:1px solid #ddd;padding-top:10px;}
+#project_snippets .snippet_ldap { font-weight:bold; margin:5px 0 0 20px; color:#666;}
+#project_snippets .snippet_detail { margin:5px 0 0 20px; }
+
+.sticky0 td{
+    position: sticky;
+    top: 0;
+    height:54px;
+    background: white;
+}
+.sticky1 td{
+    position: sticky;
+    top: 54px;
+    background: white;
+}
+#row3 td{
+    position: sticky;
+    top: 74px;
+    height:30px;
+    border-top:1px solid #ccc;
+    background: #d3eeff;
+}
+#row4 td{
+    position: sticky;
+    top: 118px;
+    height: 30px;
+    background: white;
+}
+input[type="file"] {
+  padding:0;
+}
+::-webkit-file-upload-button {
+  cursor: pointer;
+  font-family: Poppins;
+  font-size:13px; 
+  border-radius: 4px;
+  border:0;
+  padding:0 20px 0 20px;
+  background-color:#4285F4;
+  color: white;
+  height:34px;
+  transition: all 0.2s;
+}
+::-webkit-file-upload-button:hover {
+  background-color: #42cdf4
+}
+body { font-family: Poppins; margin:0; overflow:hidden; }
+
+
+ul#main_menu {
+  box-shadow: 3px 3px 8px #888;
+  position:absolute;z-index:1; background-color:#fafafa;top:35px;
+  list-style-type: none; padding:0;width:300px; left:0; transition: all 0.1s ease-in; margin-left:-310px} 
+li#list-title {font-weight:bold; line-height:35px;height:35px;} 
+li:hover {background-color:#f0f0f0;cursor:pointer;}
+li { padding:10px 0 10px 20px; border:1px solid #eee; border-top:0; font-size:13px; } 
+ul#main_menu a {text-decoration:none; color: #1976d2; font-weight:4 00;}
+
+.r {  float:right; } 
+.l {  float:left; } 
+.menu_button a { text-decoration:none; padding-right:20px; }
+
+
+
+/* The toast - position it at the top and in the middle of the screen */
+#toast {
+  visibility: hidden; /* Hidden by default. Visible on click */
+  min-width: 250px; /* Set a default minimum width */
+  margin-left: -125px; /* Divide value of min-width by 2 */
+  background-color: #ff6f00; /* Black background color */
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 2px; /* Rounded borders */
+  padding: 10px 20px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 1; /* Add a z-index if needed */
+  left: 50%; /* Center the toast */
+  top: 6px; /* 30px from the top */
+  border-radius: 10px;
+}
+
+/* Show the toast when clicking on a button (class added with JavaScript) */
+#toast.show {
+  visibility: visible; /* Show the toast */
+  /* Add animation: Take 0.5 seconds to fade in and out the toast. 
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the toast in and out */
+@-webkit-keyframes fadein {
+  from {top: 6px; opacity: 0;} 
+  to {top: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {top: -30px; opacity: 0;}
+  to {top: 6px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {top: 6px; opacity: 1;} 
+  to {top: -30px; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {top: 6px; opacity: 1;}
+  to {top: -30px; opacity: 0;}
+}
+
+.filter_field { width:180px; margin-left:20px;}
+
+.to_image {display:block;}
+.to_image caption span {display:none; cursor:pointer;height:24px;}
+.to_image:hover caption span {display:block; float:right;}
+
+#saved { height:18px; padding:5px 10px; background-color:#76d275; border:2px solid #43a047; border-radius:4px; display:none; color:white; font-weight:bold; margin:3px 10px;}
+
+
+

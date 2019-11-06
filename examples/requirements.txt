@@ -1,0 +1,7 @@
+Flask
+requests
+google-cloud-storage
+pymysql
+google-cloud-kms
+google-cloud-bigquery
+jarvan 

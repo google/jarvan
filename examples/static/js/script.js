@@ -1,3 +1,18 @@
+/*
+# Copyright 2019 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+*/
 w.values = {};
 w.appsList = ["module_a","module_b"];
 w.appsLoaded = 0;
@@ -277,41 +292,6 @@ w.set_right_width = function(set_width) {
     }
   }
   $("#right_column").css("width",w.right_width+"%");
-}
-
-w.render = function(text) {
-  showdown.extension('targetlink', function() {
-  return [{
-    type: 'html',
-    regex: /(<a [^>]+?)(>.*<\/a>)/g,
-    replace: '$1 target="_blank"$2'
-  }];
-});
-
-  var converter = new showdown.Converter({extensions: ['targetlink']});
-  showdown.setOption('disableForced4SpacesIndentedSublists', true);
-  showdown.setOption('simplifiedAutoLink', true);
-  showdown.setOption('excludeTrailingPunctuationFromURLs', true);
-  showdown.setOption('ghCompatibleHeaderId', true);
-  showdown.setOption('smoothLivePreview', true);
-
-
-  text = text.trim();
-  if(text=="") {
-    text = " Nothing to show here.";
-  }
-
-
-  //text = text.replace(/\(\g\o\//g, '(http://go/');
-  //text = text.replace(/(https\:\/\/[\%\?A-Za-z0-9\/\_\-\.]*)/g,`<a href="$1">$1</a>`);
-  //text = text.replace(/(www\.\/[\%\?A-Za-z0-9\/\_\-\.]*)/g,`<a href="http://$1">$1</a>`);
-  text = text.replace(/(go\/[\%\?A-Za-z0-9\/\_\-\.]*)/g,`<a href="http://$1">$1</a>`);
-  text = text.replace(/(cl\/[\%\?A-Za-z0-9\/\_\-\.]*)/g,`<a href="http://$1">$1</a>`);
-  text = text.replace(/(b\/[\%\?A-Za-z0-9\/\_\-\.]*)/g,`<a href="http://$1">$1</a>`);
-  text = text.replace(/(who\/[\%\?A-Za-z0-9\/\_\-\.]*)/g,`<a href="http://$1">$1</a>`);
-  
-  text = converter.makeHtml(text).replace(new RegExp('\r?\n','g'), '<br />');
-  return text;
 }
 
 w.uc_words = function( str )
